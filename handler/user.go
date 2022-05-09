@@ -15,7 +15,7 @@ func UserProfile() echo.HandlerFunc {
 	return func(c echo.Context) error {
 		var client http.Client
 		var data entities.UserResponse
-		var baseURL = "https://10.153.122.200:5000/user"
+		var baseURL = "https://user-abbiyudha.cloud.okteto.net/user"
 
 		request, err := http.NewRequest("GET", baseURL, nil)
 		jwtToken := c.Get("user").(*jwt.Token)
