@@ -9,16 +9,16 @@ import (
 func main() {
 	e := echo.New()
 	//Endpoint Admin
-	e.GET("/admin", handler.AdminProfile(), middleware.JWTMiddleware())
-	e.POST("/create/admin", handler.CreateAdmin())
-	e.POST("/admin/login", handler.Login())
-	e.PUT("/update", handler.UpdateAdmin(), middleware.JWTMiddleware())
-	e.DELETE("/delete", handler.DeleteAdmin(), middleware.JWTMiddleware())
-	e.POST("/create/user", handler.CreateUser(), middleware.JWTMiddleware())
+	e.GET("/gateway/admin", handler.AdminProfile(), middleware.JWTMiddleware())
+	e.POST("/gateway/create/admin", handler.CreateAdmin())
+	e.POST("/gateway/admin/login", handler.Login())
+	e.PUT("/gateway/update", handler.UpdateAdmin(), middleware.JWTMiddleware())
+	e.DELETE("/gateway/delete", handler.DeleteAdmin(), middleware.JWTMiddleware())
+	e.POST("/gateway/create/user", handler.CreateUser(), middleware.JWTMiddleware())
 
 	//Endpoint User
-	e.POST("/user/login", handler.LoginUser())
-	e.GET("/user", handler.UserProfile(), middleware.JWTMiddleware())
+	e.POST("/gateway/user/login", handler.LoginUser())
+	e.GET("/gateway/user", handler.UserProfile(), middleware.JWTMiddleware())
 
 	e.Start(":8000")
 }

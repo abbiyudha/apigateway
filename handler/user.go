@@ -46,7 +46,7 @@ func LoginUser() echo.HandlerFunc {
 		var (
 			client  http.Client
 			data    LoginUserRequest
-			baseURL = "https://10.153.122.200:5000/user/login"
+			baseURL = "https://abbiyudha.cloud.okteto.net/user/login"
 		)
 		c.Bind(&data)
 
@@ -82,7 +82,7 @@ func CreateUser() echo.HandlerFunc {
 		var (
 			client  http.Client
 			data    CreateUserRequest
-			baseURL = "https://10.153.122.200:5000/create/user"
+			baseURL = "https://abbiyudha.cloud.okteto.net/create/user"
 		)
 		c.Bind(&data)
 

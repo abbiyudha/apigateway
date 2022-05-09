@@ -15,7 +15,7 @@ func AdminProfile() echo.HandlerFunc {
 	return func(c echo.Context) error {
 		var client http.Client
 		var data entities.AdminResponse
-		var baseURL = "https://10.153.203.176:8080/admin"
+		var baseURL = "https://abbiyudha.cloud.okteto.net/admin"
 
 		request, err := http.NewRequest("GET", baseURL, nil)
 		jwtToken := c.Get("user").(*jwt.Token)
@@ -46,7 +46,7 @@ func CreateAdmin() echo.HandlerFunc {
 		var (
 			client  http.Client
 			data    CreateAdminRequest
-			baseURL = "https://10.153.203.176:8080/create/admin"
+			baseURL = "https://abbiyudha.cloud.okteto.net/create/admin"
 		)
 		c.Bind(&data)
 
@@ -82,7 +82,7 @@ func Login() echo.HandlerFunc {
 		var (
 			client  http.Client
 			data    LoginAdminRequest
-			baseURL = "https://10.153.203.176:8080/login"
+			baseURL = "https://abbiyudha.cloud.okteto.net/login"
 		)
 		c.Bind(&data)
 
@@ -118,7 +118,7 @@ func UpdateAdmin() echo.HandlerFunc {
 		var (
 			client  http.Client
 			data    UpdateAdminRequest
-			baseURL = "https://10.153.203.176:8080/update"
+			baseURL = "https://abbiyudha.cloud.okteto.net/update"
 		)
 		c.Bind(&data)
 
@@ -156,7 +156,7 @@ func DeleteAdmin() echo.HandlerFunc {
 	return func(c echo.Context) error {
 		var client http.Client
 		var data entities.Admin
-		var baseURL = "https://10.153.203.176:8080/delete"
+		var baseURL = "https://abbiyudha.cloud.okteto.net/delete"
 
 		request, err := http.NewRequest("DELETE", baseURL, nil)
 		jwtToken := c.Get("user").(*jwt.Token)
