@@ -20,5 +20,5 @@ func main() {
 	e.POST("/user/login", handler.LoginUser())
 	e.GET("/user", handler.UserProfile(), middleware.JWTMiddleware())
 
-	e.Start("localhost:8000")
+	e.Start(":8000")
 }
